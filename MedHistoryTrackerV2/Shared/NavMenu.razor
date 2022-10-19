@@ -1,0 +1,64 @@
+﻿@inject WebsiteAuthenticator WebsiteAuthenticator
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Med History Tracker</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <NavItem RedirectUrl="#" SubList="MasterSublist">
+            <NavText>
+                <i class="fas fa-solid fa-lg fa-database pr-2"> </i> Master
+            </NavText>
+        </NavItem>
+        <NavItem RedirectUrl="#" SubList="TransactionSublist">
+            <NavText>
+                <i class="fas fa-solid fa-lg fa-clone pr-2"> </i> Transactions
+            </NavText>
+        </NavItem>
+        <NavItem RedirectUrl="#" SubList="ReportSublist">
+            <NavText>
+                <i class="fas fa-solid fa-lg fa-file-alt pr-2"> </i> Reports
+            </NavText>
+        </NavItem>
+        <button onclick="TryLogout">
+            <i class="fas fa-solid fa-lg fa-sign-out pr-2"> </i> Logout
+        </button>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private List<Link> MasterSublist = new List<Link>{
+        new Link{Name="Medication",Url="mastermedication"},
+        new Link{Name="Test",Url="mastertest"},
+        new Link{Name="Test Group",Url="mastertestgroup"},
+    };
+
+    private List<Link> TransactionSublist = new List<Link>{
+        new Link{Name="Medication",Url="transactionmedication"},
+        new Link{Name="Test",Url="transactiontest"},
+        new Link{Name="Test Group",Url="transactiontestgroup"},
+    };
+
+    private List<Link> ReportSublist = new List<Link>{
+        new Link{Name="Medication",Url="reportmedication"},
+        new Link{Name="Test",Url="reporttest"},
+        new Link{Name="Test Group",Url="reporttestgroup"},
+    };
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    private async Task TryLogout()
+    {
+        await WebsiteAuthenticator.LogoutAsync();
+    }
+}

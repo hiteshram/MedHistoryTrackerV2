@@ -1,0 +1,45 @@
+﻿@inject WebsiteAuthenticator WebsiteAuthenticator
+
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5">
+                        <h3 class="mb-3 text-center">Welcome to Medical History Tracker</h3>
+                        <h4 class="mb-3 text-center">Sign in</h4>
+                        <EditForm Model="LoginFormModel" Context="Login" class="d-flex flex-column">
+                            @if(!isSuccess){
+                                <p class="text-danger">Invalid Credentials, please try again.</p>
+                            }
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="typeUserName">User Name*</label>
+                                <InputText id="typeUserName" class="form-control form-control-lg" @bind-Value="LoginFormModel.UserName" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="typePassword">Password*</label>
+                                <InputText type="password" id="typePassword" class="form-control form-control-lg" @bind-Value="LoginFormModel.Password" />
+                            </div>
+                            <div class="mx-auto">
+                                <button class="btn btn-primary btn-lg btn-block mr-5" @onclick="TryLogin">Login</button>
+                                <button class="btn btn-danger btn-lg btn-block" type="reset">Cancel</button>
+                            </div>
+                        </EditForm>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@code {
+    private LoginForm LoginFormModel { get; set; } = new();
+    private bool isSuccess { get; set; } = true;
+
+    private async Task TryLogin()
+    {
+        isSuccess = await WebsiteAuthenticator.LoginAsync(LoginFormModel);
+    }
+
+}

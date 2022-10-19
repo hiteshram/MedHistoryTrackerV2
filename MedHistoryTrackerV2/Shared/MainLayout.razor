@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+@inject WebsiteAuthenticator WebsiteAuthenticator
+
+<AuthorizeView Context="Account">
+    <NotAuthorized>
+        <LoginWidget />
+    </NotAuthorized>
+    <Authorized>
+        <PageTitle>Med History Tracker</PageTitle>
+        <div class="page">
+            <div class="sidebar">
+                <NavMenu />
+            </div>
+            <main>
+                <article class="content px-4">
+                    @Body
+                </article>
+            </main>
+        </div>
+    </Authorized>
+    <Authorizing>
+        Authorizing in process...
+    </Authorizing>
+</AuthorizeView>
+
+@code {
+
+}

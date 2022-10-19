@@ -1,0 +1,16 @@
+﻿@page "/"
+<p>This is main</p>
+<p>@principal.FindFirstValue(ClaimTypes.Sid)</p>
+<p>@principal.FindFirstValue(ClaimTypes.Name)</p>
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authState { get; set; }
+    private ClaimsPrincipal principal { get; set; }
+    protected async override void OnParametersSet()
+    {
+        if (authState != null)
+        {
+            principal = (await authState).User;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedHistoryTrackerV2", "MedHistoryTrackerV2\MedHistoryTrackerV2.csproj", "{A2655A56-8B0D-4F37-8C66-2B8A4D279126}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedHistoryTrackerV2.Services", "MedHistoryTrackerV2.Services\MedHistoryTrackerV2.Services.csproj", "{D63FFB88-701F-46A6-A7E7-86C53E1B9D70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedHistoryTrackerV2.Repository", "MedHistoryTrackerV2.Repository\MedHistoryTrackerV2.Repository.csproj", "{BC7F9152-CF39-4C8A-AF5F-0ECA3274F1C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedHistoryTrackerV2.Data", "MedHistoryTrackerV2.Data\MedHistoryTrackerV2.Data.csproj", "{C423A210-3E80-4B8C-9BA4-91B635CFCDFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedHistoryTrackerV2.Components", "MedHistoryTrackerV2.Components\MedHistoryTrackerV2.Components.csproj", "{BA355179-917B-4704-AC47-199448BE0832}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2655A56-8B0D-4F37-8C66-2B8A4D279126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2655A56-8B0D-4F37-8C66-2B8A4D279126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2655A56-8B0D-4F37-8C66-2B8A4D279126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2655A56-8B0D-4F37-8C66-2B8A4D279126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63FFB88-701F-46A6-A7E7-86C53E1B9D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63FFB88-701F-46A6-A7E7-86C53E1B9D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63FFB88-701F-46A6-A7E7-86C53E1B9D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63FFB88-701F-46A6-A7E7-86C53E1B9D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7F9152-CF39-4C8A-AF5F-0ECA3274F1C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7F9152-CF39-4C8A-AF5F-0ECA3274F1C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7F9152-CF39-4C8A-AF5F-0ECA3274F1C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7F9152-CF39-4C8A-AF5F-0ECA3274F1C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C423A210-3E80-4B8C-9BA4-91B635CFCDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C423A210-3E80-4B8C-9BA4-91B635CFCDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C423A210-3E80-4B8C-9BA4-91B635CFCDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C423A210-3E80-4B8C-9BA4-91B635CFCDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA355179-917B-4704-AC47-199448BE0832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA355179-917B-4704-AC47-199448BE0832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA355179-917B-4704-AC47-199448BE0832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA355179-917B-4704-AC47-199448BE0832}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {116F5C57-3A2E-4E0C-B7B2-C4D05926ABD3}
+	EndGlobalSection
+EndGlobal

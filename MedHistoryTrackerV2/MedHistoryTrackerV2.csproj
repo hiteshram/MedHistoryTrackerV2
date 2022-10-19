@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\MedicalHistoryTracker.mdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedHistoryTrackerV2.Components\MedHistoryTrackerV2.Components.csproj" />
+    <ProjectReference Include="..\MedHistoryTrackerV2.Data\MedHistoryTrackerV2.Data.csproj" />
+    <ProjectReference Include="..\MedHistoryTrackerV2.Services\MedHistoryTrackerV2.Services.csproj" />
+  </ItemGroup>
+
+</Project>
