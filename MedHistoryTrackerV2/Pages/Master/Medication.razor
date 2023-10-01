@@ -1,17 +1,26 @@
 ﻿@page "/mastermedication"
-@using MedHistoryTrackerV2.Services
+
+
 <h2>Medicine Catalog</h2>
-<p>@principal.FindFirstValue(ClaimTypes.Sid)</p>
-<p>@principal.FindFirstValue(ClaimTypes.Name)</p>
+@if (_medicinesList?.Count > 0)
+{
+    <p>@_medicinesList.Count</p>
+}
+
 @code {
     [CascadingParameter]
-    private Task<AuthenticationState> authState { get; set; }
-    private ClaimsPrincipal principal { get; set; }
+    private Task<AuthenticationState>? authState { get; set; }
+    private ClaimsPrincipal? principal { get; set; }
+    [Inject]
+    public IMedicineService medicineService { get; set; }
+    private IList<MedicineModel>? _medicinesList;
+
     protected async override void OnParametersSet()
     {
         if (authState != null)
         {
             principal = (await authState).User;
         }
+        _medicinesList = medicineService.GetAllMedicines();
     }
 }
