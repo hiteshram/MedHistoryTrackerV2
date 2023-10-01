@@ -9,14 +9,7 @@ public class MedicineRepositoryAccess : IMedicineRepository
 {
     public string connString { get; set; }
 
-    public MedicineRepositoryAccess()
-    {
-        
-        string sourcePath = Path.Combine("wwwroot", "MedicalHistoryTracker.mdb");
-        this.connString = $"Provider=Microsoft.Jet.OLEDB.4.0;Data Source={sourcePath}";
-        //this.connString = $"Provider=Microsoft.ACE.OLEDB.12.0;;Data Source={sourcePath}";
-         
-    }
+    public MedicineRepositoryAccess(string connString) => this.connString = connString;
 
     bool IMedicineRepository.AddMedicine(MedicineModel medicine)
     {
