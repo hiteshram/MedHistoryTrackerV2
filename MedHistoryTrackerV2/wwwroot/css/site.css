@@ -79,3 +79,7 @@ a, .btn-link {
     text-decoration: underline;
     color: white;
 }
+
+:root {
+    --main-bg-color: #0047AB;
+}
