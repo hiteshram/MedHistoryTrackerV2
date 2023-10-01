@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MedHistoryTrackerV2.Services\MedHistoryTrackerV2.Services.csproj" />
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedHistoryTrackerV2.Data\MedHistoryTrackerV2.Data.csproj" />
   </ItemGroup>
 
 </Project>
