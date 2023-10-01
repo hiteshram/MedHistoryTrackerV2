@@ -9,7 +9,7 @@ main {
 }
 
 .sidebar {
-    background-color: #508bfc;
+    background-color: var(--main-bg-color);
 }
 
 .top-row {

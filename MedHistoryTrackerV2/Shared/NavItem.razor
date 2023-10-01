@@ -1,12 +1,17 @@
-﻿<div class="nav-item d-flex flex-column">
+﻿@inject WebsiteAuthenticator WebsiteAuthenticator
+
+<div class="nav-item d-flex flex-column">
     <NavLink @onclick=@DisplaySublist>
         <div class="d-flex">
             <div class="flex-grow-1 nav-text ml-2">
                 @NavText
             </div>
-            <div class="nav-dropdown">
-                <span class="fas fa-solid fa-lg @ChevronState"></span>
-            </div>
+            @if (SubList?.Count > 0)
+            {
+                <div class="nav-dropdown">
+                    <span class="fas fa-solid fa-lg @ChevronState"></span>
+                </div>
+            }
         </div>
     </NavLink>
     @if (showSublist)
@@ -30,12 +35,20 @@
 @code {
     [Parameter] public RenderFragment? NavText { get; set; }
     [Parameter] public string? RedirectUrl { get; set; }
-    [Parameter] public List<Link> SubList { get; set; }
+    [Parameter] public List<Link>? SubList { get; set; }
     private bool showSublist { get; set; }
     private string ChevronState = "fa-chevron-down";
-    private void DisplaySublist()
+    private async Task DisplaySublist()
     {
-        showSublist = !showSublist;
-        ChevronState = ChevronState.Equals("fa-chevron-down") ? "fa-chevron-up" : "fa-chevron-down";
+        if (RedirectUrl?.Equals("#")??false)
+        {
+            showSublist = !showSublist;
+            ChevronState = ChevronState.Equals("fa-chevron-down") ? "fa-chevron-up" : "fa-chevron-down";
+        }
+        else if (RedirectUrl?.Equals("Logout") ?? false)
+        {
+            await WebsiteAuthenticator.LogoutAsync();
+        }
+
     }
 }
