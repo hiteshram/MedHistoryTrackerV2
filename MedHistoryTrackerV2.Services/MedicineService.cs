@@ -1,9 +1,10 @@
 ﻿using MedHistoryTrackerV2.Data.Models;
 using MedHistoryTrackerV2.Repository.Abstractions;
+using MedHistoryTrackerV2.Services.Abstractions;
 
 namespace MedHistoryTrackerV2.Services;
 
-public class MedicineService
+public class MedicineService:IMedicineService
 {
     public IMedicineRepository MedicineRepository { get; private set; }
 

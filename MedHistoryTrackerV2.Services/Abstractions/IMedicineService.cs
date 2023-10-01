@@ -2,7 +2,7 @@
 using MedHistoryTrackerV2.Repository.Abstractions;
 namespace MedHistoryTrackerV2.Services.Abstractions;
 
-public interface IMedicineManager
+public interface IMedicineService
 {
     IMedicineRepository MedicineRepository { get; }
     bool AddMedicine(MedicineModel medicine);
